@@ -4,17 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".CreateTaskActivity">
+
 
     <TextView
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textColor="@color/white"
         android:text="@string/create_a_new_task"
         app:layout_constraintBottom_toTopOf="@+id/editTextName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47" />
 
     <EditText
         android:id="@+id/editTextName"
@@ -29,8 +34,20 @@
 
 
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="53dp" />
+        tools:layout_editor_absoluteY="99dp" />
+
+    <Button
+        android:id="@+id/buttonNewTask"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/create"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
