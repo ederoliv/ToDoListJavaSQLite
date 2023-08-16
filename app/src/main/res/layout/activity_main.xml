@@ -33,7 +33,7 @@
         android:layout_height="60dp"
         android:layout_marginBottom="15dp"
         android:backgroundTint="#39BE91"
-        android:text="@string/nova_tarefa"
+        android:text="@string/create_task"
         android:textSize="24sp"
         android:textColor="@color/white"
         app:cornerRadius="10dp"

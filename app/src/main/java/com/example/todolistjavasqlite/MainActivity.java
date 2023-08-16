@@ -35,6 +35,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        createDatabase();
+
+    }
+
+    public void createDatabase(){
+
+        try {
+            database = openOrCreateDatabase("dbTodoList", MODE_PRIVATE, null);
+            database.execSQL("CREATE TABLE IF NOT EXISTS taskTable(" +
+                    " id INTEGER PRIMARY KEY AUTOINCREMENT" + // cria uma coluna ID que seria a chave primaria que se autoincrementa
+                    ", name VARCHAR" +                        // coluna com o nome da task
+                    ", description VARCHAR)");                // coluna com a descrição da task
+
+            database.close(); // fecha a transação
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     // método que carrega a tela para criação de uma nova tarefa
