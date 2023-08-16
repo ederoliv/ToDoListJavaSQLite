@@ -9,12 +9,12 @@
     <TextView
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:
-
+        android:text="@string/create_a_new_task"
         app:layout_constraintBottom_toTopOf="@+id/editTextName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
         android:id="@+id/editTextName"

@@ -22,11 +22,11 @@ public class CreateTaskActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create);
 
         editTextName = findViewById(R.id.editTextName); // alternativa ao editTextName = (EditText) findViewById(R.id.editTextName); deixando o código menos verboso.
-        button = (Button) findViewById(R.id.buttonNewTask);
+        button = findViewById(R.id.buttonNewTask);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClickListener(View view) { register(); }
+            public void onClick(View view) { register(); }
         });
 
     }
@@ -42,7 +42,7 @@ public class CreateTaskActivity extends AppCompatActivity {
                 statement.executeInsert(); //executa o insert
 
                 database.close(); // fecha a transação
-                finish();
+                finish(); // fecha a activity
 
             }catch (Exception e){
                 e.printStackTrace();

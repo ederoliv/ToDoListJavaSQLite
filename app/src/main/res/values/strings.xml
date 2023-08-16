@@ -3,4 +3,5 @@
     <string name="wenote">WeNote</string>
     <string name="nova_tarefa">Nova tarefa</string>
     <string name="todo">TODO</string>
+    <string name="create_a_new_task">Create a New Task</string>
 </resources>
