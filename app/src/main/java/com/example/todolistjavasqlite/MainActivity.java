@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listViewData = (ListView) findViewById(R.id.listViewData);
-        buttonNewTask = (Button) findViewById(R.id.buttonNewTask);
+        listViewData = findViewById(R.id.listViewData); // alternativa ao uso de listViewData = (ListView) findViewById(R.id.listViewData); para um código menos verboso
+        buttonNewTask = findViewById(R.id.buttonNewTask);
 
         buttonNewTask.setOnClickListener(new View.OnClickListener() {
             @Override
