@@ -3,9 +3,11 @@ package com.example.todolistjavasqlite;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -35,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         createDatabase();
+        listData();
 
     }
 
@@ -54,6 +56,39 @@ public class MainActivity extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void listData(){
+
+        try {
+            arrayIDs = new ArrayList<>();
+            database = openOrCreateDatabase("dbTodoList", MODE_PRIVATE, null);
+
+            Cursor cursor =  database.rawQuery("SELECT * FROM taskTable", null);
+
+            ArrayList<String> rows = new ArrayList<>();
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                    this,
+                    android.R.layout.simple_list_item_1,
+                    android.R.id.text1,
+                    rows
+            );
+
+            listViewData.setAdapter(adapter);
+            cursor.moveToFirst();
+
+            while (cursor!=null){
+                rows.add(cursor.getString(1)); //array com as strings da coluna: name
+                arrayIDs.add(cursor.getInt(0));//array com as chaves primarias, coluna:id
+
+                cursor.moveToNext();
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     // método que carrega a tela para criação de uma nova tarefa
