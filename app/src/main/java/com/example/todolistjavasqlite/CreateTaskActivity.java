@@ -2,6 +2,8 @@ package com.example.todolistjavasqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
@@ -41,8 +43,8 @@ public class CreateTaskActivity extends AppCompatActivity {
                 statement.bindString(1, editTextName.getText().toString()); //faz o bind do texto contido da editText com a query do sql
                 statement.executeInsert(); //executa o insert
 
-                database.close(); // fecha a transação
-                finish(); // fecha a activity
+                database.close();
+                finish();
 
             }catch (Exception e){
                 e.printStackTrace();

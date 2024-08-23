@@ -20,10 +20,10 @@
 
     <ListView
         android:id="@+id/listViewData"
-        android:outlineSpotShadowColor="@color/white"
-        android:layout_width="399dp"
-        android:layout_height="528dp"
+        android:layout_width="315dp"
+        android:layout_height="527dp"
         android:layout_marginTop="8dp"
+        android:outlineSpotShadowColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />

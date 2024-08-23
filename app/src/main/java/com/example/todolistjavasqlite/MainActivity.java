@@ -27,13 +27,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listViewData = findViewById(R.id.listViewData); // alternativa ao uso de listViewData = (ListView) findViewById(R.id.listViewData); para um código menos verboso
+        listViewData = findViewById(R.id.listViewData);
         buttonNewTask = findViewById(R.id.buttonNewTask);
 
         buttonNewTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openNewTaskScreen();
+
+             openNewTaskScreen();
+
             }
         });
 
@@ -41,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
         listData();
 
     }
+    @Override
+    protected void onResume(){
+        super.onResume();
+        listData();
+    }
+
 
     public void createDatabase(){
 
@@ -94,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
     // método que carrega a tela para criação de uma nova tarefa
     public void openNewTaskScreen(){
         Intent intent = new Intent(this, CreateTaskActivity.class);
+
         startActivity(intent);
+
     }
 }
